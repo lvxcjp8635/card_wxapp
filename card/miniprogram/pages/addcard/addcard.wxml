@@ -1,0 +1,104 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">card</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells__title"></view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">银行</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input id="bank" class="weui-input" bindinput='change' placeholder="请输入银行" value="{{bank}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">卡号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input id="cardnum" class="weui-input" bindinput='change' type="number" value="{{cardnum}}" placeholder="请输入卡号" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">账单日</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{zdr}}" start="2015-09-01" data-type='1' bindchange="bindDateChange">
+            <view class="weui-input">{{zdr}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">还款日</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{hkr}}" start="2015-09-01" data-type='2' bindchange="bindDateChange">
+            <view class="weui-input">{{hkr}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">固定额度</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" id="gded" value="{{gded}}" bindinput='change' type='number' placeholder="请输入固定额度" />
+        </view>
+      </view>
+
+
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">账单</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" id="zd" value="{{zd}}" bindinput='change' type='number' placeholder="请输入账单" />
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">可用额度</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" id="kyed" value="{{kyed}}" bindinput='change' type='number' placeholder="请输入可用额度" />
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input" wx:if="{{isshow=='update'}}">
+        <view class="weui-cell__bd">
+          <input class="weui-input"  id="hk"  bindinput='change' type='number'  placeholder="还款"    />
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-vcode-btn" bindtap='huankuan' style="border:1px solid #e5e5e5;" >还款</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" id="yq"  bindinput='change' type='number' placeholder="用去"  />
+        </view>
+        <view class="weui-cell__ft">
+          <view class="weui-vcode-btn" bindtap='yongqu' style="color: red;">用去</view>
+        </view>
+      </view>    
+    </view>
+ 
+    <view class="weui-cells__title">备注</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" id="mark" value="{{mark}}" bindinput='change' placeholder="请输入文本" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button wx:if="{{isshow=='add'}}" class="weui-btn" type="primary" bindtap='addcard'>确定</button>
+      <button wx:if="{{isshow=='update'}}" class="weui-btn" type="primary" bindtap='updatecard'>确定</button>
+      <button wx:if="{{isshow=='update'}}" class="weui-btn" type="warn" bindtap='delete'>删除</button> 
+    </view>
+  </view>
+</view>

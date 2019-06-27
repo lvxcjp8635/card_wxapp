@@ -1,0 +1,17 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/card/card",
+    "pages/index/index",
+    "pages/addcard/addcard",
+    "pages/history/history"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "card",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

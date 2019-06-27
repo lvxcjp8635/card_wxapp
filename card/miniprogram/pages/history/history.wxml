@@ -1,0 +1,56 @@
+<!-- <view class="page" wx:if="{{showSearch}}">
+  <view class="page__hd">
+    <view class="page__title"></view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">开始时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{begin}}" start="2015-09-01" data-type='1' bindchange="bindDateChange">
+          <view class="weui-input">{{begin}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">结束时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{end}}" start="2015-09-01" data-type='2' bindchange="bindDateChange">
+          <view class="weui-input">{{end}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+   <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="queryHistory">查询</button>
+  </view>
+</view>
+
+ -->
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title"></view>
+  </view>
+  <view class="page__bd">
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">账单日</view>
+        <view class="th">余额</view>
+      </view>
+      <block wx:for="{{queryResult}}">
+        <view class="tr bg-g">
+          <view class="td">{{item.hkr}}</view>
+          <view class="td">{{item.yue}}</view>
+           <view class="weui-cell__ft">
+                    <view class="weui-vcode-btn" bindtap='delRecord'  data-id='{{item._id}}'>删除</view>
+                </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+</view>
